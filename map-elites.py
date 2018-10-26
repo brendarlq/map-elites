@@ -1,10 +1,12 @@
 #mapelites
 import random
 
-# ME_POP_COUNT (ME_SIZEX * ME_SIZEY)
-# son los tamaños del mapita que queres modificar
-# 
 # // calling code defines me_dna, me_mutate, me_pos, me_eval
+# MAP-Elites
+DIM = 32
+SIZEX = DIM
+SIZEY = DIM * 2
+SIZE = SIZEX * SIZEY  
 
 # Genoma (vector)
 class me_dna(object):
@@ -48,11 +50,13 @@ class me_dna(object):
     # la corrida del subconjunto (porcentaje de aciertos)
     # f(x) 
     def me_eval(self)
+        self.fitness = setea el fitness
+        self.user1 = 
+        self.user2 = 
 
- # Cantidad de celdas 
-SIZEX = 100
-SIZEY = 100
-SIZE = SIZEX * SIZEY          
+    def get_best(self, count)
+        best = 0
+        for i 
                 
 # Clase específica del juego
 class me_info(object):
@@ -115,7 +119,7 @@ class me_project(object):
             
             # EVALUATE
             # método que obtiene el fitness
-            me_eval(self,self.tmp, self.tmpi)
+            me_eval(self.tmpi)
             
             fit = self.tmpi.fitness
             if self.best_score < 0:
@@ -125,7 +129,9 @@ class me_project(object):
                     self.best_score = fit
             
             if self.tmpi.fitness != 0:
+                # update map
                 x,y = me_pos(self.tmpi)
+                # update cell
                 if SIZEX > x >= 0 and SIZEY  > y >= 0:
                     mid = y * SIZEX + x
                     cell = self.cell[mid]
@@ -135,3 +141,15 @@ class me_project(object):
                         self.mapp[mid] = self.tmpi.fitness
                         cell.best = self.tmp
             self.generation += 1
+
+        
+class main(self):
+    def __init__(self, project):
+        self.project = me_project()
+        #create an empty N-dimensional map of elites
+        self.project.me_create(DIM * 6):
+
+    def me_core(self):
+        # for I iterations (with iterator i)
+        while self.project.generation < 50000:
+            self.project.me_update()
